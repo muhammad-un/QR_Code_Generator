@@ -33,7 +33,7 @@ QR_Code_Generator/
 ├── requirements.txt          # Project dependencies
 └── README.md                 # Documentation
 
-
+---
 ## 🛠️ Installation & Usage
 
 1. **Clone the repository**
