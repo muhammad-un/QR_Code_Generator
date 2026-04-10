@@ -1,27 +1,24 @@
-Markdown# QR Code Generator Pro 🔲
+markdown
 
-[![Python Version](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
-[![UI Library](https://img.shields.io/badge/UI-CustomTkinter-orange)](https://github.com/TomSchimansky/CustomTkinter)
-[![License](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/licenses/MIT)
+# QR Code Generator Pro 🔲
 
-A professional desktop application for generating customizable QR codes. Features dual-mode generation (Standard & Branded), real-time previews, and logo embedding.
+![Python](https://img.shields.io/badge/Python-3.10+-blue)
+![CustomTkinter](https://img.shields.io/badge/UI-CustomTkinter-orange)
+![License](https://img.shields.io/badge/License-MIT-green)
 
----
+A professional desktop application for generating customizable QR codes. Features **dual-mode generation** (Standard & Branded), real-time previews, and logo embedding.
 
 ## 🚀 Key Features
 
-* **Dual-Mode Engine:** Toggle between clean "Simple" codes and robust "Branded" codes.
-* **Logo Embedding:** Automatic scaling and white-padding for logos in Branded mode.
-* **Live Preview:** Intelligent 600ms debounced preview updates as you type.
-* **High-Resolution Export:** Save your designs as PNG or JPG.
-* **Modern UI:** Built with CustomTkinter for a sleek, dark-themed experience.
-* **Portable:** Optimized for Nuitka packaging into a single `.exe`.
-
----
+- **Dual-Mode Engine**: Toggle between clean "Simple" codes and robust "Branded" codes.
+- **Logo Embedding**: Automatic scaling and white-padding for logos in Branded mode.
+- **Live Preview**: Intelligent 600ms debounced preview updates as you type.
+- **High-Resolution Export**: Save your designs as PNG or JPG.
+- **Modern UI**: Built with CustomTkinter for a sleek, dark-themed experience.
+- **Portable**: Optimized for Nuitka packaging into a single `.exe`.
 
 ## 📂 Project Structure
 
-```text
 QR_Code_Generator/
 ├── assets/
 │   ├── app_icon.ico          # Application taskbar/window icon
@@ -32,29 +29,59 @@ QR_Code_Generator/
 ├── main.py                   # Controller: Application Entry Point
 ├── requirements.txt          # Project dependencies
 └── README.md                 # Documentation
-🛠️ Installation & Usage1. Clone & SetupBashgit clone [https://github.com/muhammad-un/QR_Code_Generator.git](https://github.com/muhammad-un/QR_Code_Generator.git)
-cd QR_Code_Generator
-2. Environment (Recommended)Bashpython -m venv .venv
+
+## 🛠️ Installation & Usage
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/muhammad-un/QR_Code_Generator.git
+   cd QR_Code_Generator
+
+Create virtual environment (recommended)bash
+
+python -m venv .venv
 .venv\Scripts\activate      # Windows
 # source .venv/bin/activate # macOS/Linux
-3. Install & RunBashpip install -r requirements.txt
+
+Install dependencies & runbash
+
+pip install -r requirements.txt
 python main.py
-🏗️ Building the Windows ExecutableThis project is optimized for Nuitka. To compile the project into a single, standalone executable:Bashpython -m nuitka --standalone --onefile --enable-plugin=tk-inter --include-data-dir=assets=assets --windows-icon-from-ico=assets/app_icon.ico --output-filename=QR_Code_Generator_Pro main.py
-🧠 Technical OverviewError Correction StrategyThe app balances "cleanliness" and "reliability" using two distinct modes:ModeLevelData RecoveryUse CaseSimpleM~15%Standard URLs and text (cleaner look).BrandedH~30%Necessary for Logo Overlays to ensure scanability.Asset ManagementTo prevent "File Not Found" errors after the .exe is moved, we use a recursive resource path helper:Pythondef resource_path(relative: str) -> str:
+
+ Building the Windows ExecutableThis project is optimized for Nuitka:bash
+
+python -m nuitka --standalone --onefile --enable-plugin=tk-inter \
+  --include-data-dir=assets=assets \
+  --windows-icon-from-ico=assets/app_icon.ico \
+  --output-filename=QR_Code_Generator_Pro main.py
+
+ Technical OverviewError Correction StrategyThe app balances "cleanliness" and "reliability":Mode
+Error Correction
+Data Recovery
+Use Case
+Simple
+Low (~15%)
+Standard
+Clean URLs and text
+Branded
+High (~30%)
+Robust
+With logo overlays
+
+Asset Management (Important for .exe)To avoid "File Not Found" errors after packaging:python
+
+def resource_path(relative: str) -> str:
     base = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))
     if not getattr(sys, "frozen", False):
         base = os.path.join(base, "..")
     return os.path.normpath(os.path.join(base, relative))
-🤝 ContributingFeel free to fork this project, submit PRs, or report issues.Fork the ProjectCreate your Feature Branch (git checkout -b feature/AmazingFeature)Commit your Changes (git commit -m 'Add some AmazingFeature')Push to the Branch (git push origin feature/AmazingFeature)Open a Pull Request
-***
 
-### 💡 Final Tip for Clean GitHub History
-Since your terminal showed you are tracking `__pycache__` files (the `.pyc` files), you should create a file named **`.gitignore`** in your main folder and paste this inside:
+ ContributingFeel free to fork this project, submit PRs, or report issues. Final Tip: Clean Git HistoryCreate a .gitignore file with this content:gitignore
 
-```text
 __pycache__/
 .venv/
 build/
 *.dist/
 *.onefile-build/
 *.exe
+
