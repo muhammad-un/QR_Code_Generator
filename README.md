@@ -1,24 +1,27 @@
-markdown
-
 # QR Code Generator Pro 🔲
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue)
-![CustomTkinter](https://img.shields.io/badge/UI-CustomTkinter-orange)
-![License](https://img.shields.io/badge/License-MIT-green)
+[![Python Version](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
+[![UI Library](https://img.shields.io/badge/UI-CustomTkinter-orange)](https://github.com/TomSchimansky/CustomTkinter)
+[![License](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/licenses/MIT)
 
-A professional desktop application for generating customizable QR codes. Features **dual-mode generation** (Standard & Branded), real-time previews, and logo embedding.
+A professional desktop application for generating customizable QR codes. Features dual-mode generation (Standard & Branded), real-time previews, and logo embedding.
+
+---
 
 ## 🚀 Key Features
 
-- **Dual-Mode Engine**: Toggle between clean "Simple" codes and robust "Branded" codes.
-- **Logo Embedding**: Automatic scaling and white-padding for logos in Branded mode.
-- **Live Preview**: Intelligent 600ms debounced preview updates as you type.
-- **High-Resolution Export**: Save your designs as PNG or JPG.
-- **Modern UI**: Built with CustomTkinter for a sleek, dark-themed experience.
-- **Portable**: Optimized for Nuitka packaging into a single `.exe`.
+* **Dual-Mode Engine:** Toggle between clean "Simple" codes and robust "Branded" codes.
+* **Logo Embedding:** Automatic scaling and white-padding for logos in Branded mode.
+* **Live Preview:** Intelligent 600ms debounced preview updates as you type.
+* **High-Resolution Export:** Save your designs as PNG or JPG.
+* **Modern UI:** Built with CustomTkinter for a sleek, dark-themed experience.
+* **Portable:** Optimized for Nuitka packaging into a single `.exe`.
+
+---
 
 ## 📂 Project Structure
 
+```text
 QR_Code_Generator/
 ├── assets/
 │   ├── app_icon.ico          # Application taskbar/window icon
@@ -29,6 +32,7 @@ QR_Code_Generator/
 ├── main.py                   # Controller: Application Entry Point
 ├── requirements.txt          # Project dependencies
 └── README.md                 # Documentation
+
 
 ## 🛠️ Installation & Usage
 
